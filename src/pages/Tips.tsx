@@ -1,314 +1,306 @@
 
-import { BookOpen, BriefcaseBusiness, Rocket, TrendingUp } from "lucide-react";
+import { TrendingUp, BookOpen, Award, Code, CheckCircle, Globe } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const Tips = () => {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center">Dicas e Tendências</h1>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold mb-8 text-center">Dicas e Tendências em Ciência de Dados</h1>
       
-      <Tabs defaultValue="market" className="max-w-4xl mx-auto">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="market">Mercado</TabsTrigger>
-          <TabsTrigger value="certifications">Certificações</TabsTrigger>
-          <TabsTrigger value="technologies">Tecnologias Emergentes</TabsTrigger>
-        </TabsList>
+      {/* Mercado de Trabalho */}
+      <section className="mb-12">
+        <div className="flex items-center mb-6">
+          <TrendingUp className="h-8 w-8 mr-3 text-primary" />
+          <h2 className="text-3xl font-bold">Mercado de Trabalho</h2>
+        </div>
         
-        <TabsContent value="market">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center">
-                <TrendingUp className="mr-2 h-5 w-5" />
-                Tendências de Mercado
-              </CardTitle>
-              <CardDescription>
-                Insights sobre a evolução do mercado de trabalho em Ciência de Dados
-              </CardDescription>
+              <CardTitle>Oportunidades de Carreira</CardTitle>
+              <CardDescription>Principais áreas de atuação para cientistas de dados</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Crescimento da Demanda</h3>
-                  <p>
-                    De acordo com relatórios recentes, a demanda por cientistas de dados continua em 
-                    ascensão, com um crescimento projetado de 28% até 2026. Com a crescente 
-                    adoção de soluções baseadas em dados em todos os setores, empresas estão 
-                    competindo pelos melhores talentos.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Setores em Expansão</h3>
-                  <p className="mb-3">
-                    Embora tradicionalmente concentrada no setor de tecnologia, a ciência de dados 
-                    está se expandindo rapidamente para outras indústrias:
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>Saúde: Análise de dados clínicos, medicina personalizada</li>
-                    <li>Finanças: Detecção de fraudes, análise de risco</li>
-                    <li>Varejo: Personalização de experiência, otimização de estoque</li>
-                    <li>Agricultura: Agricultura de precisão, previsão de colheitas</li>
-                    <li>Setor Público: Políticas baseadas em evidências, análise de impacto social</li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Perfil Profissional Valorizado</h3>
-                  <p className="mb-3">
-                    Empresas estão buscando profissionais com:
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>Combinação de habilidades técnicas e conhecimento de negócios</li>
-                    <li>Experiência em comunicação de resultados para públicos não técnicos</li>
-                    <li>Capacidade de colaboração em equipes multidisciplinares</li>
-                    <li>Entendimento ético sobre o uso de dados</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-        
-        <TabsContent value="certifications">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <BookOpen className="mr-2 h-5 w-5" />
-                Certificações Recomendadas
-              </CardTitle>
-              <CardDescription>
-                Certificações que podem impulsionar sua carreira em Ciência de Dados
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  {[
-                    {
-                      title: "IBM Data Science Professional",
-                      provider: "IBM / Coursera",
-                      description: "Certificação completa que aborda desde conceitos básicos até ferramentas avançadas para análise e visualização de dados."
-                    },
-                    {
-                      title: "Microsoft Certified: Azure Data Scientist Associate",
-                      provider: "Microsoft",
-                      description: "Focada em implementação de soluções de ciência de dados na plataforma Azure, incluindo machine learning."
-                    },
-                    {
-                      title: "Google Professional Data Engineer",
-                      provider: "Google Cloud",
-                      description: "Certificação para profissionais que projetam e constroem sistemas de processamento de dados na Google Cloud."
-                    },
-                    {
-                      title: "AWS Certified Data Analytics - Specialty",
-                      provider: "Amazon Web Services",
-                      description: "Voltada para design e manutenção de soluções de análise de dados na AWS."
-                    },
-                    {
-                      title: "Certified Data Scientist (CDS)",
-                      provider: "Data Science Council of America",
-                      description: "Avalia competências em aprendizado de máquina, big data e análise estatística."
-                    },
-                    {
-                      title: "SAS Certified Data Scientist",
-                      provider: "SAS",
-                      description: "Série de certificações que atestam habilidades em análise avançada usando ferramentas SAS."
-                    },
-                  ].map((cert, index) => (
-                    <div key={index} className="border rounded-lg p-4">
-                      <h3 className="font-semibold text-lg">{cert.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-2">Fornecedor: {cert.provider}</p>
-                      <p className="text-sm">{cert.description}</p>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="bg-muted rounded-lg p-4 mt-4">
-                  <h3 className="font-semibold mb-2">Dica Profissional</h3>
-                  <p>
-                    Além das certificações formais, desenvolva um portfólio de projetos práticos que demonstrem suas habilidades. Projetos no GitHub, participações em competições como Kaggle e contribuições para projetos de código aberto são altamente valorizados pelos recrutadores.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-        
-        <TabsContent value="technologies">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Rocket className="mr-2 h-5 w-5" />
-                Tecnologias Emergentes
-              </CardTitle>
-              <CardDescription>
-                Novas tecnologias e ferramentas que estão moldando o futuro da Ciência de Dados
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">IA Generativa</h3>
-                  <p>
-                    Modelos como GPT, BERT e Stable Diffusion estão revolucionando a geração de conteúdo baseado em dados. Cientistas de dados que dominam técnicas de prompt engineering e fine-tuning destes modelos estão em alta demanda.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">MLOps</h3>
-                  <p>
-                    A implementação de práticas DevOps para machine learning tem se tornado essencial para garantir que modelos possam ser deployados de forma confiável e escalável em ambientes de produção. Ferramentas como MLflow, Kubeflow e DVC estão ganhando adoção.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Data Governance e Ética</h3>
-                  <p>
-                    Com o aumento das preocupações sobre privacidade e uso ético de dados, ferramentas para garantir compliance, rastreabilidade e explicabilidade de modelos têm ganhado importância. A capacidade de construir modelos transparentes e auditáveis é cada vez mais valorizada.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Edge Analytics</h3>
-                  <p>
-                    A capacidade de realizar análises de dados em dispositivos edge (próximos à fonte de dados) está crescendo com o avanço de hardware especializado. Isso reduz a latência e permite aplicações em tempo real em IoT, veículos autônomos e wearables.
-                  </p>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                  <div className="bg-muted rounded-lg p-4">
-                    <h4 className="font-medium mb-2">Ferramentas em Ascensão</h4>
-                    <ul className="list-disc pl-5 space-y-1">
-                      <li>Databricks (Plataforma unificada para dados e IA)</li>
-                      <li>dbt (Transformação de dados)</li>
-                      <li>Dagster/Airflow (Orquestração de pipelines)</li>
-                      <li>Ray (Computação distribuída para IA)</li>
-                      <li>Feature Stores (Tecton, Feast, Hopsworks)</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-muted rounded-lg p-4">
-                    <h4 className="font-medium mb-2">Linguagens e Frameworks</h4>
-                    <ul className="list-disc pl-5 space-y-1">
-                      <li>Python continua dominante (PyTorch, TensorFlow)</li>
-                      <li>Julia (para computação científica de alto desempenho)</li>
-                      <li>Rust (para componentes de performance crítica)</li>
-                      <li>JAX (para pesquisa em ML e diferenciação automática)</li>
-                      <li>Elixir (para processamento de dados em tempo real)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
-      
-      <div className="max-w-4xl mx-auto mt-12">
-        <h2 className="text-2xl font-bold mb-6">Habilidades para se Destacar</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center text-lg">
-                <Code2 className="mr-2 h-5 w-5" />
-                Habilidades Técnicas
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Programação (Python, R, SQL)</span>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
+                  <span><strong>Data Scientist:</strong> Análise avançada e desenvolvimento de modelos preditivos</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Estatística e Matemática</span>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
+                  <span><strong>Machine Learning Engineer:</strong> Implementação e deploy de modelos ML</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Machine Learning</span>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
+                  <span><strong>Data Analyst:</strong> Análise de dados e criação de dashboards</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Big Data (Spark, Hadoop)</span>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
+                  <span><strong>Business Intelligence:</strong> Inteligência de negócios e relatórios estratégicos</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Cloud Computing</span>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
+                  <span><strong>Data Engineer:</strong> Infraestrutura e pipelines de dados</span>
                 </li>
               </ul>
             </CardContent>
           </Card>
-          
+
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center text-lg">
-                <BriefcaseBusiness className="mr-2 h-5 w-5" />
-                Habilidades de Negócios
-              </CardTitle>
+              <CardTitle>Setores em Alta</CardTitle>
+              <CardDescription>Indústrias com maior demanda por cientistas de dados</CardDescription>
             </CardHeader>
             <CardContent>
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Comunicação Eficaz</span>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
+                  <span><strong>Fintech:</strong> Análise de risco, detecção de fraudes, algoritmos de trading</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Storytelling com Dados</span>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
+                  <span><strong>E-commerce:</strong> Sistemas de recomendação, análise de comportamento</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Entendimento de Domínio</span>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
+                  <span><strong>Saúde:</strong> Medicina preditiva, análise de imagens médicas</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Resolução de Problemas</span>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
+                  <span><strong>Telecomunicações:</strong> Otimização de redes, análise de churn</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Trabalho em Equipe</span>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-          
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center text-lg">
-                <TrendingUp className="mr-2 h-5 w-5" />
-                Habilidades Emergentes
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>MLOps e DevOps</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Ética em IA e Dados</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Computação em Nuvem</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Prompt Engineering</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-                  <span>Design de Sistemas Resilientes</span>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 mr-2 text-green-500 mt-0.5" />
+                  <span><strong>Agronegócio:</strong> Agricultura de precisão, otimização de safras</span>
                 </li>
               </ul>
             </CardContent>
           </Card>
         </div>
-      </div>
+
+        <Alert>
+          <TrendingUp className="h-4 w-4" />
+          <AlertDescription>
+            <strong>Dica de Mercado:</strong> O Brasil tem uma das maiores demandas por cientistas de dados da América Latina, 
+            com salários iniciais entre R$ 5.000 a R$ 8.000 e podendo chegar a R$ 25.000+ para níveis sênior.
+          </AlertDescription>
+        </Alert>
+      </section>
+
+      {/* Certificações */}
+      <section className="mb-12">
+        <div className="flex items-center mb-6">
+          <Award className="h-8 w-8 mr-3 text-primary" />
+          <h2 className="text-3xl font-bold">Certificações Importantes</h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Certificações Cloud</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                  <span>AWS Certified Machine Learning</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                  <span>Google Cloud Professional Data Engineer</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                  <span>Microsoft Azure Data Scientist Associate</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Certificações Especializadas</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                  <span>TensorFlow Developer Certificate</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                  <span>Databricks Certified Data Scientist</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                  <span>Tableau Desktop Specialist</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Certificações Acadêmicas</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                  <span>IBM Data Science Professional Certificate</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                  <span>Coursera Deep Learning Specialization</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                  <span>edX MicroMasters in Statistics and Data Science</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Tecnologias Emergentes */}
+      <section className="mb-12">
+        <div className="flex items-center mb-6">
+          <Code className="h-8 w-8 mr-3 text-primary" />
+          <h2 className="text-3xl font-bold">Tecnologias Emergentes</h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <Card>
+            <CardHeader>
+              <CardTitle>Inteligência Artificial Generativa</CardTitle>
+              <CardDescription>As tecnologias que estão revolucionando o campo</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold mb-2">Large Language Models (LLMs)</h4>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <Badge variant="secondary">GPT-4</Badge>
+                    <Badge variant="secondary">Claude</Badge>
+                    <Badge variant="secondary">LLaMA</Badge>
+                    <Badge variant="secondary">Gemini</Badge>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Modelos de linguagem que revolucionam processamento de texto e geração de conteúdo.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-2">Computer Vision Avançada</h4>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <Badge variant="secondary">DALL-E</Badge>
+                    <Badge variant="secondary">Stable Diffusion</Badge>
+                    <Badge variant="secondary">Midjourney</Badge>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Geração e manipulação de imagens através de inteligência artificial.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>MLOps e Infraestrutura</CardTitle>
+              <CardDescription>Ferramentas para produção de modelos ML</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold mb-2">Plataformas MLOps</h4>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <Badge variant="secondary">MLflow</Badge>
+                    <Badge variant="secondary">Kubeflow</Badge>
+                    <Badge variant="secondary">Weights & Biases</Badge>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Ferramentas para gerenciar o ciclo de vida completo de modelos ML.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-2">Edge Computing</h4>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <Badge variant="secondary">TensorFlow Lite</Badge>
+                    <Badge variant="secondary">ONNX</Badge>
+                    <Badge variant="secondary">CoreML</Badge>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Execução de modelos ML diretamente em dispositivos móveis e IoT.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Tendências Futuras */}
+      <section>
+        <div className="flex items-center mb-6">
+          <Globe className="h-8 w-8 mr-3 text-primary" />
+          <h2 className="text-3xl font-bold">Tendências para 2024-2025</h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>AI Responsável</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm mb-4">
+                Crescimento da demanda por práticas éticas em IA, incluindo fairness, transparência e explicabilidade de modelos.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Badge>Explainable AI</Badge>
+                <Badge>Bias Detection</Badge>
+                <Badge>AI Ethics</Badge>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>AutoML Evolution</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm mb-4">
+                Democratização da ciência de dados através de ferramentas de machine learning automatizado.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Badge>Auto-Feature Engineering</Badge>
+                <Badge>Neural Architecture Search</Badge>
+                <Badge>Low-Code ML</Badge>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Quantum Computing</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm mb-4">
+                Primeiras aplicações práticas de computação quântica em problemas de otimização e ML.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Badge>Quantum ML</Badge>
+                <Badge>Optimization</Badge>
+                <Badge>Cryptography</Badge>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
     </div>
   );
 };
