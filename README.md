@@ -1,8 +1,9 @@
 # ATIVIDADE TEMA INTEGRADOR - GESTÃO DE CARREIRA 
 ## Project info
-
-**URL**: https://lovable.dev/projects/7346ebee-7ae9-442c-bb3a-65a0f92479b4
+__________________________________________________________________________________
 **URL DA PÁGINA CRIADA*: https://preview--tarefa-colaborativa-facil.lovable.app/
+__________________________________________________________________________________
+**URL**: https://lovable.dev/projects/7346ebee-7ae9-442c-bb3a-65a0f92479b4
 
 ## How can I edit this code?
 
